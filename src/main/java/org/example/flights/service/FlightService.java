@@ -5,7 +5,6 @@ import org.example.flights.database.FlightDatabase;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FlightService {

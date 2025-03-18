@@ -23,8 +23,8 @@ public class FlightController {
             @RequestParam(value = "from", required = false) String from,
             @RequestParam(value = "to", required = false) String to,
             @RequestParam(value = "date", required = false) String date,
-            @RequestParam(value = "duration", required = false) double duration,
-            @RequestParam(value = "price", required = false) double price) {
+            @RequestParam(value = "duration", required = false) Double duration,
+            @RequestParam(value = "price", required = false) Double price) {
         return new ResponseEntity<>(flightService.getFlights(from, to, date, duration, price), HttpStatus.OK);
     }
 }
