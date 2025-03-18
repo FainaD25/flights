@@ -2,6 +2,8 @@
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
+import { format, parseISO } from "date-fns";
+
 
 const flights = ref([]);
 const errorMessage = ref(null);
@@ -19,6 +21,10 @@ const getFlights = async () => {
     const params = Object.fromEntries(
         Object.entries(lastSearchQuery.value).filter(([_, v]) => v != null && v !== "")
     );
+
+    if (params.date) {
+      params.date = format(parseISO(params.date), "dd-MM-yyyy");
+    }
 
     const response = await axios.get('/api/public/flights', { params });
     console.log("API response:", response.data);
