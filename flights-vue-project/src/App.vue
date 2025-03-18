@@ -52,7 +52,7 @@ nav {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-space-cadet);
+  border-left: 1px solid skyblue;
 }
 
 nav a:first-of-type {
