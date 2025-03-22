@@ -6,13 +6,12 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <header>
     <div class="header-content">
-      <img alt="Logo" class="logo" src="@/assets/logo.svg" width="125px" height="125" />
-      <HelloWorld msg="Read It Later" />
+      <img alt="Logo" class="logo" src="@/assets/logo.png" width="100" height="100" />
+      <HelloWorld msg="Flights" />
     </div>
 
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
     </nav>
   </header>
 
@@ -27,13 +26,14 @@ header {
   width: 100%;
   z-index: 100;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: skyblue;
   margin-bottom: 2vw;
 }
 
 .header-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Vertically center-aligns logo and text */
+  align-items: center;
   margin-left: 2vw;
 }
 
@@ -63,7 +63,7 @@ nav a:first-of-type {
 
   .header-content {
     flex-direction: row;
-    align-items: center; /* Vertically center-aligns logo and text */
+    align-items: center;
   }
 
   .logo {
@@ -73,10 +73,9 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: 1rem;
+    margin-top: 0;
+    margin-left: 2rem;
     font-size: 1rem;
-
-    margin-top: 1rem;
   }
 }
 </style>

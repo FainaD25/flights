@@ -2,6 +2,7 @@ package org.example.flights.service;
 
 import org.example.flights.database.Flight;
 import org.example.flights.database.FlightDatabase;
+import org.example.flights.database.Seat;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
@@ -53,5 +54,23 @@ public class FlightService {
             }
         }
         return Optional.empty();
+    }
+
+    public boolean bookSeats(long flightId, List<String> seatIds) {
+        Optional<Flight> flight = getFlight(flightId);
+        if (flight.isPresent()) {
+            for (String seatId : seatIds) {
+                for (Seat seat : flight.get().getSeats()) {
+                    if (seat.getId().equals(seatId)) {
+                        if (seat.isTaken()) {
+                            return false;
+                        }
+                        seat.setTaken(true);
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }

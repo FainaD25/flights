@@ -1,23 +1,44 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.main-content {
+  align-items: center; /* Center the content horizontally within the main content area */
+  margin: 0 auto; /* Center the content horizontally if there's extra space */
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+div .confirm-button {
+  width: 100px;
+  background-color: #42A5F5;
+  border-radius: 4px;
+  padding: 0.75rem;
+  cursor: pointer;
+  border: none;
+}
+
+div .confirm-button:hover {
+  background-color: #2e9cf5;
+}
+
+.error-message {
+  font-size: 14px;
+  color: #cc0202;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(278, 100%, 34%, 0.2);
   }
 }
 
@@ -32,4 +53,27 @@ a,
     flex-direction: column;
     width: 100%;
   }
+
+  .main-content {
+    flex: 1;
+    padding: 1rem 8rem 8rem;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto;
+}
+
+thead th {
+  padding: 1vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+tbody td {
+  color: black;
+  padding: 1vw;
+  text-align: center;
 }
