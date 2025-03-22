@@ -68,7 +68,7 @@ Here's how the functionality is implemented
 function `markRandomSeatsAsTaken()` - Uses `Random` to generate a number between 0 and half of the total seats.
  Randomly selects seats based on this number and marks them as taken <br> <br>
 3. Seat Class <br>
-   Defines a seat object, storing seat-related details. <br>
+   Defines a seat object, storing seat-related details. <br> <br>
 4. Service Layer <br>
    Handles most of the backend logic. <br>
 function `getFlights` - Retrieves all flights, filtered by given parameters.
