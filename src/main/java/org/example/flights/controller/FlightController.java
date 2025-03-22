@@ -2,6 +2,7 @@ package org.example.flights.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.flights.database.Flight;
+import org.example.flights.database.Seat;
 import org.example.flights.service.FlightService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,5 +32,12 @@ public class FlightController {
     public ResponseEntity<Flight> getFlight(@PathVariable("id") long id) {
         Optional<Flight> result = flightService.getFlight(id);
         return result.map(flight -> new ResponseEntity<>(flight, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @PutMapping("public/flights/{id}/book")
+    public ResponseEntity<Void> bookSeats(@PathVariable("id") long id, @RequestBody List<String> seats) {
+        if (flightService.bookSeats(id, seats)) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
