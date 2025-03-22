@@ -1,5 +1,6 @@
 package org.example.flights.database;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -7,16 +8,25 @@ import java.util.List;
 import java.util.Random;
 
 @Getter
+@Schema(description = "Data transfer object for flight")
 public class Flight {
     private static final Random random = new Random();
     private static int flightId = 0;
+    @Schema(description = "Unique flight id", example = "1")
     private final int id;
+    @Schema(description = "Departure location", example = "Tallinn")
     private final String from;
+    @Schema(description = "Destination", example = "London")
     private final String to;
+    @Schema(description = "Flight date", example = "28-03-2025")
     private final String date;
+    @Schema(description = "Departure time", example = "10:00")
     private final String departureTime;
+    @Schema(description = "Arrival time", example = "13:00")
     private final String arrivalTime;
+    @Schema(description = "Ticket price", example = "37")
     private final double price;
+    @Schema(description = "Seats list")
     private final List<Seat> seats;
     private static final List<String> columns = List.of("A", "B", "C", "D", "E", "F");
 
